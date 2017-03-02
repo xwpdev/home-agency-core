@@ -39,7 +39,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -81,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\app\modules\brandApp.js" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\blue-sky.css" />
     <Content Include="Content\css\flat-admin.css" />
@@ -88,23 +99,78 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\img\profile-icon.png" />
     <Content Include="Content\js\app.js" />
+    <Content Include="Content\js\ng\angular-route.min.js" />
+    <Content Include="Content\js\ng\angular.min.js" />
+    <Content Include="Content\js\ng\ui-bootstrap-tpls.js" />
     <Content Include="Content\js\vendor.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery-1.10.2.min.js" />
     <Content Include="Content\js\modernizr-2.6.2.js" />
+    <Content Include="HomeAgencyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>HomeAgencyModel.Context.cs</LastGenOutput>
+      <DependentUpon>HomeAgencyModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="HomeAgencyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HomeAgencyModel.edmx</DependentUpon>
+      <LastGenOutput>HomeAgencyModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Brand.cs">
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Customer.cs">
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Discount.cs">
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HomeAgencyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomeAgencyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeAgencyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeAgencyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomeAgencyModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase.cs">
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseProduct.cs">
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sell.cs">
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SellProduct.cs">
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -121,6 +187,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <EntityDeploy Include="HomeAgencyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HomeAgencyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="HomeAgencyModel.edmx.diagram">
+      <DependentUpon>HomeAgencyModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\js\ng\angular.min.js.map" />
     <None Include="Properties\PublishProfiles\homeagency - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\homeagency - Web Deploy.pubxml" />
     <Content Include="Views\Home\Brand.cshtml" />
@@ -138,6 +212,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

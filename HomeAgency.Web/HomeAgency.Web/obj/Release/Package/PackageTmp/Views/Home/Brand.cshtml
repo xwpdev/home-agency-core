@@ -2,6 +2,80 @@
 @{
     ViewBag.Title = "Brand";
 }
-
-<h2>Brand</h2>
-
+<script src="~/Content/app/modules/brandApp.js"></script>
+<div ng-app="brandApp" ng-controller="brandController" ng-init="loadData()">
+    <!--List Panel-->
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" name="filterBrand" value="" placeholder="Filter Brand Name" ng-model="filter.brandName" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <input type="button" name="addNewBrandButton" value="Add New" class="btn btn-warning pull-right" ng-click="openAddPanel()" />
+                </div>
+                <br />
+                <div class="row">
+                    <div class="card-body">
+                        <div class="row" ng-show="filterdData.length" ng-cloak>
+                            <div class="col-md-12">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Brand Name</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="b in filterdData = (brandList | filter: { name : filter.brandName })" ng-cloak>
+                                            <td>
+                                                <span>
+                                                    {{b.id}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>{{b.name}}</span>
+                                            </td>
+                                            <td class="custom-td-middle">
+                                                <span class="label label-{{(b.active)?'success':'danger'}}">{{(b.active)?'Active':'Not Active'}}</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row" ng-hide="filterdData.length" ng-cloak>
+                            <div class="col-md-12">
+                                <span class="text-info">No Data Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Add Panel-->
+    <script type="text/ng-template" id="brandAddPanel">
+        <div class="card">
+            <div class="card-header">
+                <span>Add New Brand</span>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" placeholder="Brand Name" ng-model="brand.name">
+                        <div>
+                            <div class="checkbox checkbox-inline">
+                                <input type="checkbox" id="checkbox3" ng-checked="brand.active" ng-model="brand.active">
+                                <label for="checkbox3">Active</label>
+                            </div>
+                        </div>
+                        <input type="button" name="inputSaveBrand" value="Save" class="btn btn-success" ng-click="saveBrand()" />
+                        <input type="button" value="Cancel" class="btn btn-default" ng-click="cancelModal()" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</div>
