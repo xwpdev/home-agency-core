@@ -2,6 +2,80 @@
 @{
     ViewBag.Title = "Category";
 }
-
-<h2>Category</h2>
-
+<script src="~/Content/app/modules/categoryApp.js"></script>
+<div ng-app="categoryApp" ng-controller="categoryController" ng-init="loadData()">
+    <!--List Panel-->
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" name="filterCategory" value="" placeholder="Filter Category Name" ng-model="filter.categoryName" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <input type="button" name="addNewCategoryButton" value="Add New" class="btn btn-warning pull-right" ng-click="openAddPanel()" />
+                </div>
+                <br />
+                <div class="row">
+                    <div class="card-body">
+                        <div class="row" ng-show="filterdData.length" ng-cloak>
+                            <div class="col-md-12">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Category Name</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="b in filterdData = (categoryList | filter: { name : filter.categoryName })" ng-cloak>
+                                            <td>
+                                                <span>
+                                                    {{b.id}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>{{b.name}}</span>
+                                            </td>
+                                            <td class="custom-td-middle">
+                                                <span class="label label-{{(b.active)?'success':'danger'}}">{{(b.active)?'Active':'Not Active'}}</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row" ng-hide="filterdData.length" ng-cloak>
+                            <div class="col-md-12">
+                                <span class="text-info">No Data Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Add Panel-->
+    <script type="text/ng-template" id="categoryAddPanel">
+        <div class="card">
+            <div class="card-header">
+                <span>Add New Category</span>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" placeholder="Category Name" ng-model="category.name">
+                        <div>
+                            <div class="checkbox checkbox-inline">
+                                <input type="checkbox" id="checkbox3" ng-checked="category.active" ng-model="category.active">
+                                <label for="checkbox3">Active</label>
+                            </div>
+                        </div>
+                        <input type="button" name="inputSaveCategory" value="Save" class="btn btn-success" ng-click="saveCategory()" />
+                        <input type="button" value="Cancel" class="btn btn-default" ng-click="cancelModal()" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</div>
