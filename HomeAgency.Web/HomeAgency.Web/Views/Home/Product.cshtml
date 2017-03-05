@@ -2,6 +2,130 @@
 @{
     ViewBag.Title = "Product";
 }
-
-<h2>Product</h2>
-
+<script src="~/Content/app/modules/productApp.js"></script>
+<div ng-app="productApp" ng-controller="productController" ng-init="loadData()">
+    <!--List Panel-->
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" name="filterProduct" value="" placeholder="Filter Product Name" ng-model="filter.productName" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <input type="button" name="addNewProductButton" value="Add New" class="btn btn-warning pull-right" ng-click="openAddPanel()" />
+                </div>
+                <br />
+                <div class="row">
+                    <div class="card-body">
+                        <div class="row" ng-show="filterdData.length" ng-cloak>
+                            <div class="col-md-12">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>ReferenceNo</th>
+                                            <th>Brand Name</th>
+                                            <th>Category Name</th>
+                                            <th>Product Name</th>
+                                            <th>Unit Price</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="b in filterdData = (productList | filter: { name : filter.productName })" ng-cloak>
+                                            <td>
+                                                <span>
+                                                    {{b.id}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>{{b.reference}}</span>
+                                            </td>
+                                            <td>
+                                                <span>{{b.brand}}</span>
+                                            </td>
+                                            <td>
+                                                <span>{{b.category}}</span>
+                                            </td>
+                                            <td>
+                                                <span>{{b.name}}</span>
+                                            </td>
+                                            <td>
+                                                <span>{{b.unit_price}}</span>
+                                            </td>
+                                            <td class="custom-td-middle">
+                                                <span class="label label-{{(b.active)?'success':'danger'}}">{{(b.active)?'Active':'Not Active'}}</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row" ng-hide="filterdData.length" ng-cloak>
+                            <div class="col-md-12">
+                                <span class="text-info">No Data Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Add Panel-->
+    <script type="text/ng-template" id="productAddPanel">
+        <div class="card">
+            <div class="card-header">
+                <span>Add New Product</span>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <select class="form-control" ng-model="product.brandID" ng-options="brand.id as brand.name for brand in brandList">
+                                <option value="">--Select Brand--</option>
+                            </select>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <select class="form-control" ng-model="product.categoryID" ng-options="category.id as category.name for category in categoryList">
+                                <option value="">--Select Category--</option>
+                            </select>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <input type="text" class="form-control" placeholder="Product Name" ng-model="product.name">
+                        </div>
+                        <div class="row">
+                            <input type="text" class="form-control" placeholder="Reference No" ng-model="product.reference">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="checkbox checkbox-inline">
+                                    <input type="checkbox" id="checkbox4" ng-checked="product.packs" ng-model="product.packs">
+                                    <label for="checkbox4">Packs</label>
+                                </div>
+                            </div>
+                            <div class="col-md-10" ng-show="product.packs">
+                                <input type="number" class="form-control" placeholder="Items Per Pack" ng-model="product.items_per_pack">
+                            </div>
+                        </div>
+                        <div class="row" ng-show="!product.packs">
+                            <input type="number" class="form-control" placeholder="Quantity" ng-model="product.quantity">
+                        </div>
+                        <div class="row">
+                            <input type="number" class="form-control" placeholder="Unit Price" ng-model="product.unit_price">
+                        </div>
+                        <div>
+                            <div class="checkbox checkbox-inline">
+                                <input type="checkbox" id="checkbox3" ng-checked="product.active" ng-model="product.active">
+                                <label for="checkbox3">Active</label>
+                            </div>
+                        </div>
+                        <input type="button" name="inputSaveProduct" value="Save" class="btn btn-success" ng-click="saveProduct()" />
+                        <input type="button" value="Cancel" class="btn btn-default" ng-click="cancelModal()" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</div>

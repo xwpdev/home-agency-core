@@ -4,6 +4,7 @@ brandApp.controller('brandController', function ($scope, $uibModal) {
     $scope.brandList = [];
     $scope.loadData = function () {
         $scope.brandList.push({ id: 1, name: "Delmage", active: false });
+        $scope.brandList.push({ id: 2, name: "Motha", active: false });
     }
     $scope.openAddPanel = function () {
         $uibModal.open({

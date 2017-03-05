@@ -99,6 +99,7 @@
   <ItemGroup>
     <Content Include="Content\app\modules\brandApp.js" />
     <Content Include="Content\app\modules\categoryApp.js" />
+    <Content Include="Content\app\modules\productApp.js" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\blue-sky.css" />
     <Content Include="Content\css\flat-admin.css" />

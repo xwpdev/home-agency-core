@@ -3,7 +3,7 @@
 categoryApp.controller('categoryController', function ($scope, $uibModal) {
     $scope.categoryList = [];
     $scope.loadData = function () {
-        $scope.categoryList.push({ id: 1, name: "Noodles", active: false });
+        $scope.categoryList.push({ id: 1, name: "Desert", active: false });
         $scope.categoryList.push({ id: 2, name: "Supiri Soya", active: false });
     }
     $scope.openAddPanel = function () {
