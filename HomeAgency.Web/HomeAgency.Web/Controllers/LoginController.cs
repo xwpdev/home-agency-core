@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace HomeAgency.Web.Controllers
 {
     public class LoginController : Controller
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         // GET: Login
         public ActionResult Index()
         {
@@ -19,6 +21,7 @@ namespace HomeAgency.Web.Controllers
         {
             Session.Clear();
             Session.Abandon();
+            logger.Info($"User logout at {DateTime.Now.ToString("dd/MM/yyyy HH:mm")}");
             return RedirectToAction("Index", "Login");
         }
 
@@ -28,6 +31,7 @@ namespace HomeAgency.Web.Controllers
         {
             if (username == "admin" && password == "abc@123")
             {
+                logger.Info($"{username} login at {DateTime.Now.ToString("dd/MM/yyyy HH:mm")}");
                 return RedirectToAction("Dashboard", "Home");
             }
             else

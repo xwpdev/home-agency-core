@@ -62,17 +62,26 @@
                 <span>Add New Brand</span>
             </div>
             <div class="card-body">
+                <div class="row" ng-if="error.show">
+                    <div class="col-md-12">
+                        <div class="alert alert-danger">{{error.message}}</div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="text" class="form-control" placeholder="Brand Name" ng-model="brand.name">
-                        <div>
-                            <div class="checkbox checkbox-inline">
-                                <input type="checkbox" id="checkbox3" ng-checked="brand.active" ng-model="brand.active">
-                                <label for="checkbox3">Active</label>
+                        <form name="brandAddForm">
+                            <input type="text" class="form-control" placeholder="Brand Name" ng-model="brand.name" required>
+                            <div>
+                                <div class="checkbox checkbox-inline">
+                                    <input type="checkbox" id="checkbox3" ng-checked="brand.active" ng-model="brand.active" required>
+                                    <label for="checkbox3">Active</label>
+                                </div>
                             </div>
-                        </div>
-                        <input type="button" name="inputSaveBrand" value="Save" class="btn btn-success" ng-click="saveBrand()" />
-                        <input type="button" value="Cancel" class="btn btn-default" ng-click="cancelModal()" />
+                            <input type="submit" name="inputSaveBrand" value="Save" class="btn btn-success"
+                                   ng-disabled="brandAddForm.$invalid"
+                                   ng-click="brandAddForm.$valid && saveBrand()" />
+                            <input type="reset" value="Cancel" class="btn btn-default" ng-click="cancelModal()" />
+                        </form>
                     </div>
                 </div>
             </div>

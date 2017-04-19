@@ -4681,7 +4681,7 @@ ul.icons {
         }
 
             .app-inbox .messaging > .heading .badge.badge-success {
-                background-color: #256482;
+                background-color: #337ab7;
             }
 
     .app-inbox .messaging ul.chat {
@@ -6048,9 +6048,9 @@ ui-view > .app-messaging-container {
         }
 
     .btn.btn-success {
-        border-color: #256482;
+        border-color: #337ab7;
         border-bottom-color: #245065;
-        background-color: #256482;
+        background-color: #337ab7;
         box-shadow: 0 2px 3px rgba(41, 199, 95, 0.3);
     }
 
@@ -6190,7 +6190,7 @@ input ::-webkit-input-placeholder {
 }
 
 .has-success .form-control {
-    border-color: #245065;
+    border-color: #337ab7;
     box-shadow: none;
 }
 
@@ -6471,7 +6471,7 @@ input ::-webkit-input-placeholder {
 }
 
 .progress-bar-success {
-    background-color: #256482;
+    background-color: #337ab7;
 }
 
 .progress-bar-info {
@@ -6966,7 +6966,7 @@ table.table.card-table {
         .panel.panel-success .panel-heading {
             background-color: #bafed1;
             border-bottom-color: #9df0b9;
-            color: #245065;
+            color: #337ab7;
         }
 
     .panel.panel-info {
@@ -7780,7 +7780,7 @@ div.section {
     }
 
     .label.label-success {
-        background-color: #256482;
+        background-color: #337ab7;
     }
 
     .label.label-info {

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="homeagencyEntities-Web.config Connection String" description="homeagencyEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/HomeAgencyModel.csdl|res://*/HomeAgencyModel.ssdl|res://*/HomeAgencyModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=mssql4.gear.host;initial catalog=homeagency;persist security info=True;user id=homeagency;password=Ff7sM7-aIuN~;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Charith\\Work\\HomeAgency\\Repo\\core\\HomeAgency\.Web\\HomeAgency\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='homeagencyEntities']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="D:\\Charith\\Projects\\zonixgate-homeagency-core-e16cde8b2313\\HomeAgency\.Web\\HomeAgency\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='homeagencyEntities']/@connectionString" />
   </parameter>
 </parameters>

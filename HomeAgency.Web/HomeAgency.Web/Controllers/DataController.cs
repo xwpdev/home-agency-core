@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace HomeAgency.Web.Controllers
 {
     public class DataController : Controller
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         // GET: Data/Bill
         public ActionResult Bill()
         {

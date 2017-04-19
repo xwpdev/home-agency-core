@@ -24,6 +24,7 @@
         <AssociationConnector Association="homeagencyModel.FK_SellProduct_Product" ManuallyRouted="false" />
         <AssociationConnector Association="homeagencyModel.FK_PurchaseProduct_Purchase" ManuallyRouted="false" />
         <AssociationConnector Association="homeagencyModel.FK_SellProduct_Sell" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="homeagencyModel.sysdiagram" Width="1.5" PointX="5.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

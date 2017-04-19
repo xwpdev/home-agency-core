@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="homeagencyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="homeagencyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Brand">
           <Key>
             <PropertyRef Name="id" />
@@ -44,7 +44,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="brand_id" Type="int" />
           <Property Name="category_id" Type="int" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
@@ -54,6 +54,8 @@
           <Property Name="quantity" Type="int" />
           <Property Name="unit_price" Type="float" />
           <Property Name="active" Type="bit" />
+          <Property Name="mrp" Type="float" />
+          <Property Name="pack_count" Type="int" />
         </EntityType>
         <EntityType Name="Purchase">
           <Key>
@@ -91,6 +93,16 @@
           <Property Name="product_id" Type="int" />
           <Property Name="sell_id" Type="int" />
           <Property Name="discount_id" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_Discount_Customer">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -222,6 +234,7 @@
           <EntitySet Name="PurchaseProduct" EntityType="Self.PurchaseProduct" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sell" EntityType="Self.Sell" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SellProduct" EntityType="Self.SellProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Discount_Customer" Association="Self.FK_Discount_Customer">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Discount" EntitySet="Discount" />
@@ -263,8 +276,7 @@
             <End Role="SellProduct" EntitySet="SellProduct" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="homeagencyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -329,6 +341,8 @@
           <NavigationProperty Name="Discounts" Relationship="Self.FK_Discount_Product" FromRole="Product" ToRole="Discount" />
           <NavigationProperty Name="PurchaseProducts" Relationship="Self.FK_PurchaseProduct_Product" FromRole="Product" ToRole="PurchaseProduct" />
           <NavigationProperty Name="SellProducts" Relationship="Self.FK_SellProduct_Product" FromRole="Product" ToRole="SellProduct" />
+          <Property Name="mrp" Type="Double" />
+          <Property Name="pack_count" Type="Int32" />
         </EntityType>
         <EntityType Name="Purchase">
           <Key>
@@ -545,7 +559,18 @@
             <End Role="Sell" EntitySet="Sells" />
             <End Role="SellProduct" EntitySet="SellProducts" />
           </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="homeagencyModel.sysdiagram" />
         </EntityContainer>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -594,6 +619,8 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="homeagencyModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="pack_count" ColumnName="pack_count" />
+                <ScalarProperty Name="mrp" ColumnName="mrp" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="brand_id" ColumnName="brand_id" />
                 <ScalarProperty Name="category_id" ColumnName="category_id" />
@@ -645,6 +672,17 @@
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="sell_id" ColumnName="sell_id" />
                 <ScalarProperty Name="discount_id" ColumnName="discount_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="homeagencyModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -48,6 +48,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.5\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -102,6 +106,7 @@
     <Content Include="Content\app\modules\productApp.js" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\blue-sky.css" />
+    <Content Include="Content\css\custom-styles.css" />
     <Content Include="Content\css\flat-admin.css" />
     <Content Include="Content\css\vendor.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
@@ -138,6 +143,7 @@
     <Compile Include="Category.cs">
       <DependentUpon>HomeAgencyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -150,6 +156,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\DbHelper.cs" />
     <Compile Include="HomeAgencyModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +172,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeAgencyModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductJsonModel.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>HomeAgencyModel.tt</DependentUpon>
     </Compile>
@@ -179,6 +187,9 @@
       <DependentUpon>HomeAgencyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SellProduct.cs">
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>HomeAgencyModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -205,6 +216,13 @@
       <DependentUpon>HomeAgencyModel.edmx</DependentUpon>
     </Content>
     <Content Include="Content\js\ng\angular.min.js.map" />
+    <Content Include="JSLintNet.json" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\homeagency - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\homeagency - Web Deploy.pubxml" />
     <Content Include="Views\Home\Brand.cshtml" />
@@ -221,7 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Api\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
