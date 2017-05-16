@@ -115,6 +115,7 @@
     <Content Include="Content\css\vendor.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\img\profile-icon.png" />
+    <Content Include="Content\img\zonix_logo.png" />
     <Content Include="Content\js\app.js" />
     <Content Include="Content\js\ng\angular-route.min.js" />
     <Content Include="Content\js\ng\angular.min.js" />

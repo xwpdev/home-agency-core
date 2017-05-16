@@ -2855,7 +2855,7 @@ body {
                 }
 
                     body .app-container .app-heading .app-title .title .highlight {
-                        color: #0F28C6;
+                        color: #6B258E;
                     }
 
                 body .app-container .app-heading .app-title .description {
@@ -3611,7 +3611,7 @@ a:hover {
                         color: #FFF;
                         border-radius: 2px;
                         margin-right: 5px;
-                        background-color: #0F28C6;
+                        background-color: #6B258E;
                     }
 
 .app-landing .navbar .navbar-collapse {
@@ -3767,7 +3767,7 @@ a:hover {
 }
 
 .navbar .navbar-header .navbar-brand .highlight, .navbar .navbar-mobile .navbar-brand .highlight {
-    background-color: #0F28C6;
+    background-color: #6B258E;
 }
 
 .navbar.__inverse .navbar-header .navbar-brand, .navbar.__inverse .navbar-mobile .navbar-brand {
@@ -3775,7 +3775,7 @@ a:hover {
 }
 
     .navbar.__inverse .navbar-header .navbar-brand .highlight, .navbar.__inverse .navbar-mobile .navbar-brand .highlight {
-        background-color: #0F28C6;
+        background-color: #6B258E;
     }
 
 aside.app-sidebar {
@@ -4333,7 +4333,7 @@ aside.app-sidebar {
 }
 
     aside.app-sidebar .sidebar-header .sidebar-brand .highlight {
-        background-color: #0F28C6;
+        background-color: #6B258E;
     }
 
     aside.app-sidebar .sidebar-menu ul.sidebar-nav > li > a .icon {
@@ -4351,11 +4351,11 @@ aside.app-sidebar {
     }
 
     aside.app-sidebar .sidebar-menu ul.sidebar-nav > li.active > a .title {
-        color: #0F28C6;
+        color: #6B258E;
     }
 
     aside.app-sidebar .sidebar-menu ul.sidebar-nav > li.dropdown > .dropdown-menu > ul > li.section {
-        color: #0F28C6;
+        color: #6B258E;
     }
 
     aside.app-sidebar .sidebar-menu ul.sidebar-nav > li.dropdown.open > a:after {
@@ -4368,12 +4368,11 @@ aside.app-sidebar {
     }
 
         aside.app-sidebar .sidebar-footer ul.menu > li.dropdown .dropdown-menu {
-            border-bottom-color: #0F28C6;
+            border-bottom-color: #6B258E;
         }
 
 .app-login {
-    /*background: #0F28C6;*/
-    background: #1e333e;
+    background: #040F0F;
     padding: 0 !important;
 }
 
@@ -4519,7 +4518,7 @@ aside.app-sidebar {
 
                     .app-login .app-body .app-block .app-form .form-header .highlight {
                         font-weight: 400;
-                        color: #0F28C6;
+                        color: #6B258E;
                         margin-right: 2px;
                     }
 
@@ -5054,7 +5053,7 @@ ui-view > .app-messaging-container {
 
                 .app-messaging .messaging > .footer .message-box button {
                     border-left: 1px solid #dfe6e8;
-                    color: #0F28C6;
+                    color: #6B258E;
                 }
 
                     .app-messaging .messaging > .footer .message-box button .fa {
@@ -5389,7 +5388,7 @@ ui-view > .app-messaging-container {
             }
 
                 .search-result > ul.result > li .info .title .highlight {
-                    color: #0F28C6;
+                    color: #6B258E;
                 }
 
             .search-result > ul.result > li .info .description {
@@ -5476,7 +5475,7 @@ ui-view > .app-messaging-container {
         }
 
     .badge.badge-success {
-        color: #0F28C6;
+        color: #6B258E;
         background-color: rgba(41, 199, 95, 0.2);
     }
 
@@ -5598,7 +5597,7 @@ ui-view > .app-messaging-container {
                 }
 
                     .card.card-tab .card-header > ul > li.active a, .card.card-tab ul.nav-tabs > li.active a {
-                        color: #0F28C6;
+                        color: #6B258E;
                         border-bottom: none !important;
                     }
 
@@ -5645,7 +5644,7 @@ ui-view > .app-messaging-container {
         }
 
             .card.card-tab > .ng-isolate-scope > .nav-tabs > li.active a {
-                color: #0F28C6;
+                color: #6B258E;
             }
 
     .card.card-tab > .ng-isolate-scope .tab-content .tab-pane {
@@ -5766,7 +5765,7 @@ ui-view > .app-messaging-container {
         }
 
     .card.card-green {
-        background-color: #0F28C6;
+        background-color: #6B258E;
     }
 
         .card.card-green .card-body .icon {
@@ -5783,16 +5782,16 @@ ui-view > .app-messaging-container {
     }
 
         .card.card-green-light .card-body .icon {
-            color: #0F28C6;
+            color: #6B258E;
             background-color: rgba(41, 199, 95, 0.05);
         }
 
         .card.card-green-light .card-body .content .value {
-            color: #0F28C6;
+            color: #6B258E;
         }
 
         .card.card-green-light:hover {
-            background-color: #0F28C6;
+            background-color: #6B258E;
         }
 
             .card.card-green-light:hover .card-body .icon {
@@ -5805,8 +5804,8 @@ ui-view > .app-messaging-container {
             }
 
     .card.card-green.card-chart .card-header {
-        background-color: #0F28C6;
-        color: #0F28C6;
+        background-color: #6B258E;
+        color: #6B258E;
     }
 
     .card.card-blue {
@@ -6267,8 +6266,8 @@ input ::-webkit-input-placeholder {
     .checkbox input:checked + label::after, .radio input:checked + label::after {
         content: '\f00c';
         color: #FFF;
-        background-color: #0F28C6;
-        border: 1px solid #0F28C6;
+        background-color: #6B258E;
+        border: 1px solid #6B258E;
         border-bottom: 2px solid #245065;
     }
 
@@ -6294,7 +6293,7 @@ input ::-webkit-input-placeholder {
 
     .radio input:checked + label::after {
         content: '';
-        background-color: #0F28C6;
+        background-color: #6B258E;
         border-bottom-width: 0;
     }
 
@@ -6341,7 +6340,7 @@ input ::-webkit-input-placeholder {
     }
 
 .select2-container .select2-dropdown .select2-results__option--highlighted {
-    background-color: #0F28C6;
+    background-color: #6B258E;
 }
 
 .select2-container .select2-dropdown .select2-results__option {
@@ -6510,13 +6509,13 @@ input ::-webkit-input-placeholder {
     .pagination > li.active > a, .pagination > li.active > span {
         border: 0;
         border-bottom: 2px solid #245065;
-        background-color: #0F28C6;
+        background-color: #6B258E;
     }
 
         .pagination > li.active > a:hover, .pagination > li.active > a:focus, .pagination > li.active > span:hover, .pagination > li.active > span:focus {
             border: 0;
             border-bottom: 2px solid #245065;
-            background-color: #0F28C6;
+            background-color: #6B258E;
         }
 
 table.table > tbody > tr td, table.table > tbody > tr th, table.table > thead > tr td, table.table > thead > tr th {
@@ -6602,8 +6601,8 @@ table.table.card-table {
             border: 0;
             background-color: transparent;
             border-radius: 1px;
-            border-bottom: 4px solid #0F28C6;
-            color: #0F28C6;
+            border-bottom: 4px solid #6B258E;
+            color: #6B258E;
         }
 
 @media (max-width: 767px) {
@@ -6687,7 +6686,7 @@ table.table.card-table {
                 height: 60px;
                 min-width: 60px;
                 border-radius: 50%;
-                background-color: #0F28C6;
+                background-color: #6B258E;
                 color: #FFF;
             }
 
@@ -6778,7 +6777,7 @@ table.table.card-table {
         left: 0;
         transform: translate(0, -50%);
         width: 100%;
-        background-color: #0F28C6;
+        background-color: #6B258E;
     }
 
 .step .tab-content > div {
@@ -6806,7 +6805,7 @@ table.table.card-table {
 }
 
     .pricing-table > .pricing-heading {
-        border-bottom: 2px solid #0F28C6;
+        border-bottom: 2px solid #6B258E;
         padding: 20px;
         text-align: center;
     }
@@ -6886,7 +6885,7 @@ table.table.card-table {
         }
 
     .pricing-table.highlight {
-        background-color: #0F28C6;
+        background-color: #6B258E;
     }
 
         .pricing-table.highlight > .pricing-heading {
@@ -7251,21 +7250,21 @@ div.section {
 }
 
 .ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point {
-    stroke: #0F28C6;
+    stroke: #6B258E;
 }
 
 .ct-series-a .ct-area {
-    fill: #0F28C6;
+    fill: #6B258E;
 }
 
 .ct-series-a .ct-slice-pie {
-    fill: #0F28C6;
+    fill: #6B258E;
     stroke: #FFF;
     stroke-width: 3;
 }
 
 .ct-series-a .ct-slice-donut {
-    stroke: #0F28C6;
+    stroke: #6B258E;
 }
 
 .ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-point {
@@ -7460,7 +7459,7 @@ div.section {
         }
 
     .chart-label .ct-series-a:after {
-        background-color: #0F28C6;
+        background-color: #6B258E;
     }
 
     .chart-label .ct-series-b:after {
@@ -7513,7 +7512,7 @@ div.section {
             height: 30px;
             left: 50%;
             margin-left: -15px;
-            background-color: #0F28C6;
+            background-color: #6B258E;
             border-radius: 15px;
             margin-top: 15px;
             z-index: 1007;
@@ -7865,7 +7864,7 @@ pre {
             left: 8px;
             top: 50%;
             transform: translate(0, -50%);
-            background-color: #0F28C6;
+            background-color: #6B258E;
         }
 
     .list-group.__timeline:after {
@@ -7939,8 +7938,8 @@ ul.tags {
 
             ul.tags > li > a:hover {
                 color: #FFF;
-                border: 1px solid #0F28C6;
-                background-color: #0F28C6;
+                border: 1px solid #6B258E;
+                background-color: #6B258E;
                 cursor: pointer;
             }
 
@@ -7987,11 +7986,11 @@ footer.app-footer {
     }
 
         .autocomplete-suggestions .autocomplete-suggestion strong {
-            color: #0F28C6;
+            color: #6B258E;
         }
 
         .autocomplete-suggestions .autocomplete-suggestion:hover {
-            background-color: #0F28C6;
+            background-color: #6B258E;
             color: #FFF;
             cursor: pointer;
         }
@@ -8021,8 +8020,8 @@ footer.app-footer {
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background-color: #0F28C6;
-        box-shadow: 0 1px 3px #0F28C6;
+        background-color: #6B258E;
+        box-shadow: 0 1px 3px #6B258E;
         z-index: 101108;
         transition: all 0.3s ease;
     }
