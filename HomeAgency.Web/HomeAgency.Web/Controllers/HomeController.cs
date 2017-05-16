@@ -33,5 +33,23 @@ namespace HomeAgency.Web.Controllers
         {
             return View();
         }
+
+        // GET: Home/Details
+        public ActionResult Details()
+        {
+            return View();
+        }
+
+        // GET: Home/Shops
+        public ActionResult Shops()
+        {
+            return View();
+        }
+
+        // GET: Home/Agents
+        public ActionResult Agents()
+        {
+            return View();
+        }
     }
 }
