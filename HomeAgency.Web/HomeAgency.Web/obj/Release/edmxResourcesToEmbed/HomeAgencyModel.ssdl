@@ -49,6 +49,8 @@
     <Property Name="quantity" Type="int" />
     <Property Name="unit_price" Type="float" />
     <Property Name="active" Type="bit" />
+    <Property Name="mrp" Type="float" />
+    <Property Name="pack_count" Type="int" />
   </EntityType>
   <EntityType Name="Purchase">
     <Key>

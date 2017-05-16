@@ -61,6 +61,8 @@
     <NavigationProperty Name="Discounts" Relationship="Self.FK_Discount_Product" FromRole="Product" ToRole="Discount" />
     <NavigationProperty Name="PurchaseProducts" Relationship="Self.FK_PurchaseProduct_Product" FromRole="Product" ToRole="PurchaseProduct" />
     <NavigationProperty Name="SellProducts" Relationship="Self.FK_SellProduct_Product" FromRole="Product" ToRole="SellProduct" />
+    <Property Name="mrp" Type="Double" />
+    <Property Name="pack_count" Type="Int32" />
   </EntityType>
   <EntityType Name="Purchase">
     <Key>

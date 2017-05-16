@@ -3883,7 +3883,7 @@ aside.app-sidebar {
             width: 100%;
             list-style: none;
             margin: 0;
-            padding: 4rem 0;
+            padding: 2rem 0;
         }
 
             aside.app-sidebar .sidebar-menu ul.sidebar-nav > li {
@@ -6520,8 +6520,8 @@ input ::-webkit-input-placeholder {
         }
 
 table.table > tbody > tr td, table.table > tbody > tr th, table.table > thead > tr td, table.table > thead > tr th {
-    font-size: 14px;
-    padding: 15px 30px;
+    font-size: 13px;
+    padding: 14px 28px;
 }
 
 table.table.card-table {
