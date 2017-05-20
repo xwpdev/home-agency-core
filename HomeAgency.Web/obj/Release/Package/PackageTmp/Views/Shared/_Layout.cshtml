@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - Home Agency</title>
+    <link href="~/Content/css/vendor.css" rel="stylesheet" />
+    <link href="~/Content/css/flat-admin.css" rel="stylesheet" />
+    <link href="~/Content/css/blue-sky.css" rel="stylesheet" />
+    <link href="~/Content/css/custom-styles.css" rel="stylesheet" />
+
+    <script src="~/Content/js/modernizr-2.6.2.js"></script>
+    <script src="~/Content/js/ng/angular.min.js"></script>
+    <script src="~/Content/js/ng/ui-bootstrap-tpls.js"></script>
+</head>
+<body>
+    <aside class="app-sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a class="sidebar-brand" href="/Home/Dashboard"><span class="highlight">Home</span>&nbsp;Agency</a>
+            <button type="button" class="sidebar-toggle">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-menu">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="/Home/Dashboard">
+                        <div class="icon">
+                            <i class="fa fa-dashboard" aria-hidden="true"></i>
+                        </div>
+                        <div class="title">Dashboard</div>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <div class="icon">
+                            <i class="fa fa-cube" aria-hidden="true"></i>
+                        </div>
+                        <div class="title">Products</div>
+                    </a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="/Home/Brand">Brand</a></li>
+                            <li><a href="/Home/Category">Category</a></li>
+                            <li><a href="/Home/Product">Product</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <div class="icon">
+                            <i class="fa fa-send" aria-hidden="true"></i>
+                        </div>
+                        <div class="title">Bills</div>
+                    </a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="/Data/Bill">Bill</a></li>
+                            <li><a href="/Data/Invoice">Invoice</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <div class="icon">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                        </div>
+                        <div class="title">Agency</div>
+                    </a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="/Home/Details">Details</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/Home/Shops">Shops</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/Home/Agents">Agents</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <div class="icon">
+                            <i class="fa fa-line-chart" aria-hidden="true"></i>
+                        </div>
+                        <div class="title">Reports</div>
+                    </a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="#  ">Coming Soon</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar-footer">
+            <!--<ul class="menu">
+                <li>
+                    <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-cogs" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li><a href="#"><span class="flag-icon flag-icon-th flag-icon-squared"></span></a></li>
+            </ul>-->
+        </div>
+    </aside>
+    <div class="app-container">
+        <nav class="navbar navbar-default" id="navbar">
+            <div class="container-fluid">
+                <div class="navbar-collapse collapse in">
+                    <ul class="nav navbar-nav navbar-mobile">
+                        <li>
+                            <button type="button" class="sidebar-toggle">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </li>
+                        <li class="logo">
+                            <a class="navbar-brand" href="#"><span class="highlight">Home</span>&nbsp;Agency</a>
+                        </li>
+                        <li>
+                            <button type="button" class="navbar-toggle">
+                                <img class="profile-img" src="~/Content/img/profile-icon.png">
+                            </button>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="navbar-title">@ViewBag.Title</li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            @DateTime.Now.ToString("dd/MM/yyyy HH:mm")
+                        </li>
+                        <li class="dropdown profile">
+                            <a href="/html/pages/profile.html" class="dropdown-toggle" data-toggle="dropdown">
+                                <img class="profile-img" src="~/Content/img/profile-icon.png">
+                                <div class="title">Profile</div>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="profile-info">
+                                    <h4 class="username">System Admin</h4>
+                                </div>
+                                <ul class="action">
+                                    <li>
+                                        <a href="/Login/Logout">
+                                            Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="custom-app-container">
+            @RenderBody()
+        </div>
+    </div>
+    <script src="~/Content/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/js/vendor.js"></script>
+    <script src="~/Content/js/app.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-92683397-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
