@@ -2,6 +2,64 @@
 @{
     ViewBag.Title = "Invoice";
 }
+<script src="~/Content/app/modules/invoiceApp.js"></script>
 
-<h2>Invoice</h2>
+<div ng-app="invoiceApp" ng-controller="invoiceController" @*ng-init="loadData()"*@>
+    <div class="card">
+        <div class="card-body">
+            <form name="invoceDetails" novalidate>
+                <div class="row">
+                    <dic class="col-md-12">
+                        <div class="section">
+                            <div class="section-title">
+                                <i class="icon fa fa-shopping-cart" aria-hidden="true"></i>
+                                General Information
+                            </div>
+                            <div class="section-body">
+
+                            </div>
+                        </div>
+                    </dic>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="section">
+                            <div class="section-title">
+                                <i class="icon fa fa-send" aria-hidden="true"></i>
+                                Customer Billing Address
+                            </div>
+                            <div class="section-body">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="section">
+                            <div class="section-title">
+                                <i class="icon fa fa-send-o" aria-hidden="true"></i>
+                                Delivery Address
+                            </div>
+                            <div class="section-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section">
+                            <div class="section-title">
+                                <i class="icon fa fa-cart-plus" aria-hidden="true"></i>
+                                Item Information
+                            </div>
+                            <div class="section-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 

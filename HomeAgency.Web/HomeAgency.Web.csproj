@@ -104,6 +104,7 @@
     <Content Include="Content\app\modules\agentApp.js" />
     <Content Include="Content\app\modules\brandApp.js" />
     <Content Include="Content\app\modules\categoryApp.js" />
+    <Content Include="Content\app\modules\invoiceApp.js" />
     <Content Include="Content\app\modules\productApp.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -203,7 +204,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeAgencyModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddressJsonModel.cs" />
     <Compile Include="Models\AgentJsonDataModel.cs" />
+    <Compile Include="Models\CustomerJsonModel.cs" />
+    <Compile Include="Models\InvoiceJsonModel.cs" />
+    <Compile Include="Models\ItemJsonModel.cs" />
     <Compile Include="Models\ProductJsonModel.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>HomeAgencyModel.tt</DependentUpon>
