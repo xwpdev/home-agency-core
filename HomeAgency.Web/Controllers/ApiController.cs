@@ -141,5 +141,23 @@ namespace HomeAgency.Web.Controllers
             }
             return Json(obj);
         }
+
+        [HttpPost]
+        [ActionName("SaveAgent")]
+        public ActionResult SaveAgent(AgentJsonDataModel data)
+        {
+            var obj = new object();
+            try
+            {
+                var newId = DbHelper.SaveAgent(data.name, data.contactNo, data.isActive);
+                obj = new { status = (newId > 0), id = newId };
+            }
+            catch (Exception Ex)
+            {
+                logger.Log(LogLevel.Info, "SaveProduct");
+                logger.Error(Ex, "SaveProduct");
+            }
+            return Json(obj);
+        }
     }
 }

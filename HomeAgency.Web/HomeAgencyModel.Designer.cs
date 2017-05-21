@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Charith\Projects\zonixgate-homeagency-core-e16cde8b2313\HomeAgency.Web\HomeAgency.Web\HomeAgencyModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Charith\Projects\zonixgate-homeagency-core-e16cde8b2313\repo\home-agency-core\HomeAgency.Web\HomeAgencyModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

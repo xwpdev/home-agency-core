@@ -32,6 +32,8 @@ public partial class homeagencyEntities : DbContext
     }
 
 
+    public virtual DbSet<Agent> Agents { get; set; }
+
     public virtual DbSet<Brand> Brands { get; set; }
 
     public virtual DbSet<Category> Categories { get; set; }
@@ -49,8 +51,6 @@ public partial class homeagencyEntities : DbContext
     public virtual DbSet<Sell> Sells { get; set; }
 
     public virtual DbSet<SellProduct> SellProducts { get; set; }
-
-    public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
 }
 

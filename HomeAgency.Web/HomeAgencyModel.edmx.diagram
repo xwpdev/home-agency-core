@@ -5,26 +5,26 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="0e02cd41b521458ca462d959581d3ca0" Name="Diagram1" ZoomLevel="63">
-        <EntityTypeShape EntityType="homeagencyModel.Brand" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="homeagencyModel.Category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="homeagencyModel.Customer" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="homeagencyModel.Discount" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="homeagencyModel.Product" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="homeagencyModel.Purchase" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="homeagencyModel.PurchaseProduct" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="homeagencyModel.Sell" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="homeagencyModel.SellProduct" Width="1.5" PointX="10.5" PointY="3.5" IsExpanded="true" />
-        <AssociationConnector Association="homeagencyModel.FK_Product_Brand" ManuallyRouted="false" />
-        <AssociationConnector Association="homeagencyModel.FK_Product_Category" ManuallyRouted="false" />
-        <AssociationConnector Association="homeagencyModel.FK_Discount_Customer" ManuallyRouted="false" />
-        <AssociationConnector Association="homeagencyModel.FK_Sell_Customer" ManuallyRouted="false" />
-        <AssociationConnector Association="homeagencyModel.FK_Discount_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="homeagencyModel.FK_SellProduct_Discount" ManuallyRouted="false" />
-        <AssociationConnector Association="homeagencyModel.FK_PurchaseProduct_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="homeagencyModel.FK_SellProduct_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="homeagencyModel.FK_PurchaseProduct_Purchase" ManuallyRouted="false" />
-        <AssociationConnector Association="homeagencyModel.FK_SellProduct_Sell" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="homeagencyModel.sysdiagram" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="homeagencyModel.Agent" Width="1.5" PointX="0.75" PointY="11.5" />
+        <EntityTypeShape EntityType="homeagencyModel.Brand" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="homeagencyModel.Category" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="homeagencyModel.Customer" Width="1.5" PointX="6" PointY="8.5" />
+        <EntityTypeShape EntityType="homeagencyModel.Discount" Width="1.5" PointX="8.25" PointY="3.5" />
+        <EntityTypeShape EntityType="homeagencyModel.Product" Width="1.5" PointX="3" PointY="2.5" />
+        <EntityTypeShape EntityType="homeagencyModel.Purchase" Width="1.5" PointX="3" PointY="8.75" />
+        <EntityTypeShape EntityType="homeagencyModel.PurchaseProduct" Width="1.5" PointX="5.25" PointY="3.5" />
+        <EntityTypeShape EntityType="homeagencyModel.Sell" Width="1.5" PointX="8.25" PointY="8.5" />
+        <EntityTypeShape EntityType="homeagencyModel.SellProduct" Width="1.5" PointX="10.5" PointY="3.5" />
+        <AssociationConnector Association="homeagencyModel.FK_Product_Brand" />
+        <AssociationConnector Association="homeagencyModel.FK_Product_Category" />
+        <AssociationConnector Association="homeagencyModel.FK_Discount_Customer" />
+        <AssociationConnector Association="homeagencyModel.FK_Sell_Customer" />
+        <AssociationConnector Association="homeagencyModel.FK_Discount_Product" />
+        <AssociationConnector Association="homeagencyModel.FK_SellProduct_Discount" />
+        <AssociationConnector Association="homeagencyModel.FK_PurchaseProduct_Product" />
+        <AssociationConnector Association="homeagencyModel.FK_SellProduct_Product" />
+        <AssociationConnector Association="homeagencyModel.FK_PurchaseProduct_Purchase" />
+        <AssociationConnector Association="homeagencyModel.FK_SellProduct_Sell" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

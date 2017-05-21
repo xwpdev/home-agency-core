@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="homeagencyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Agent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="contact_no" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="is_active" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="Brand">
     <Key>
       <PropertyRef Name="id" />
@@ -88,16 +97,6 @@
     <Property Name="product_id" Type="int" />
     <Property Name="sell_id" Type="int" />
     <Property Name="discount_id" Type="int" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK_Discount_Customer">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -220,6 +219,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="homeagencyModelStoreContainer">
+    <EntitySet Name="Agent" EntityType="Self.Agent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
@@ -229,7 +229,6 @@
     <EntitySet Name="PurchaseProduct" EntityType="Self.PurchaseProduct" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sell" EntityType="Self.Sell" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SellProduct" EntityType="Self.SellProduct" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Discount_Customer" Association="Self.FK_Discount_Customer">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Discount" EntitySet="Discount" />

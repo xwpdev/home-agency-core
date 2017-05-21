@@ -101,6 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\app\modules\agentApp.js" />
     <Content Include="Content\app\modules\brandApp.js" />
     <Content Include="Content\app\modules\categoryApp.js" />
     <Content Include="Content\app\modules\productApp.js" />
@@ -163,6 +164,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agent.cs">
+      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Brand.cs">
       <DependentUpon>HomeAgencyModel.tt</DependentUpon>
@@ -199,6 +203,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeAgencyModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AgentJsonDataModel.cs" />
     <Compile Include="Models\ProductJsonModel.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>HomeAgencyModel.tt</DependentUpon>
@@ -214,9 +219,6 @@
       <DependentUpon>HomeAgencyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SellProduct.cs">
-      <DependentUpon>HomeAgencyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
       <DependentUpon>HomeAgencyModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

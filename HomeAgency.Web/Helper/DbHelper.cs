@@ -131,5 +131,32 @@ namespace HomeAgency.Web.Helper
                 }
             }
         }
+
+        internal static int SaveAgent(string name, string contactNo, bool isActive)
+        {
+            using (var context = new homeagencyEntities())
+            {
+                try
+                {
+                    if (context.Agents.Where(x => x.name.Trim().Equals(name)).Count() > 0)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        var temAgent = new Agent { name = name, is_active = isActive, contact_no = contactNo };
+                        context.Agents.Add(temAgent);
+                        context.SaveChanges();
+                        return temAgent.id;
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    logger.Log(LogLevel.Info, "DbHelper:SaveAgent");
+                    logger.Error(Ex, "DbHelper:SaveAgent");
+                    return 0;
+                }
+            }
+        }
     }
 }
